@@ -1,0 +1,16 @@
+pip install opencv-python
+import cv2
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\tesseract.exe"
+img = cv2.imread(path)
+txt = pytesseract.image_to_string(img)
+print(txt)
+#print(text)
+pip install gTTS
+from gtts import gTTS
+import os 
+mytext = txt
+language = 'en'
+myobj = gTTS(text=mytext, lang=language, slow=False) 
+myobj.save("welcome.mp3") 
+os.system("welcome.mp3")
